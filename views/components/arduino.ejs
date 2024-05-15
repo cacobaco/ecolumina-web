@@ -18,7 +18,7 @@
 
             <div class="card-body">
               <div class="form-group">
-                <label for="dim[<%= light.id %>]">Brilho: </label>
+                <label for="dim[<%= light.id %>]">Brilho: <small>(sensor de luz tem de estar desligado)</small></label>
                 <input type="number" class="form-control" id="dim[<%= light.id %>]" name="dim[<%= light.id %>]" value="<%= light.dim %>" min="0" max="255" />
               </div>
 
