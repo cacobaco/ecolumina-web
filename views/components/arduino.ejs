@@ -35,6 +35,7 @@
               <div class="form-group mt-1">
                 <label for="useMotionSensor[<%= light.id %>]">Ativar sensor de movimento: </label>
                 <input type="checkbox" id="useMotionSensor[<%= light.id %>]" name="useMotionSensor[<%= light.id %>]" value="<%= light.id  %>" <% if (light.useMotionSensor) { %>checked<% } %> />
+                <small>(apenas com sensor de luz ligado)</small>
               </div>
 
               <div class="form-group mt-1">
