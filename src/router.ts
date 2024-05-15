@@ -6,6 +6,7 @@ import ArduinoController from "./controllers/api/ArduinoController";
 const router = Router();
 
 router.get("/", HomeController.get);
+router.post("/", HomeController.post);
 router.get("/stats", StatsController.get);
 
 router.get("/api/arduinos/:id", ArduinoController.get);
