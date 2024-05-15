@@ -11,19 +11,19 @@ const HomeController = {
   post: (req: Request, res: Response): void => {
     const { id, dim, useSensor, useLightSensor, useMotionSensor, useButton } = req.body;
 
-    const arduino = Arduinos.find((arduino) => arduino.id === id);
+    const arduino = Arduinos.find((arduino) => arduino.id.toString() === id);
+
+    console.log(req.body);
 
     if (arduino) {
       arduino.lights = arduino.lights.map((light) => {
-        const i = light.id - 1;
-
         return {
           ...light,
-          dim: dim[i],
-          useSensor: useSensor[i],
-          useLightSensor: useLightSensor[i],
-          useMotionSensor: useMotionSensor[i],
-          useButton: useButton[i],
+          dim: Number.parseInt(dim[light.id - 1]) || 0,
+          useSensor: (useSensor as string[] | undefined)?.includes(light.id.toString()) ?? false,
+          useLightSensor: (useLightSensor as string[] | undefined)?.includes(light.id.toString()) ?? false,
+          useMotionSensor: (useMotionSensor as string[] | undefined)?.includes(light.id.toString()) ?? false,
+          useButton: (useButton as string[] | undefined)?.includes(light.id.toString()) ?? false,
         };
       });
     };

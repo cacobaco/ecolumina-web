@@ -5,7 +5,6 @@
 
   <div class="card-body">
     <form action="/" method="post">
-      <input type="hidden" name="_method" value="put" />
       <input type="hidden" name="id" value="<%= id %>" />
 
       <div class="row">
@@ -25,22 +24,22 @@
 
               <div class="form-group mt-1">
                 <label for="useSensor[<%= light.id %>]">Ativar sensores: </label>
-                <input type="checkbox" id="useSensor[<%= light.id %>]" name="useSensor[<%= light.id %>]" value="true" <% if (light.useSensor) { %>checked<% } %> />
+                <input type="checkbox" id="useSensor[<%= light.id %>]" name="useSensor[<%= light.id %>]" value="<%= light.id  %>" <% if (light.useSensor) { %>checked<% } %> />
               </div>
 
               <div class="form-group mt-1">
                 <label for="useLightSensor[<%= light.id %>]">Ativar sensor de luz: </label>
-                <input type="checkbox" id="useLightSensor[<%= light.id %>]" name="useLightSensor[<%= light.id %>]" value="true" <% if (light.useLightSensor) { %>checked<% } %> />
+                <input type="checkbox" id="useLightSensor[<%= light.id %>]" name="useLightSensor[<%= light.id %>]" value="<%= light.id  %>" <% if (light.useLightSensor) { %>checked<% } %> />
               </div>
 
               <div class="form-group mt-1">
                 <label for="useMotionSensor[<%= light.id %>]">Ativar sensor de movimento: </label>
-                <input type="checkbox" id="useMotionSensor[<%= light.id %>]" name="useMotionSensor[<%= light.id %>]" value="true" <% if (light.useMotionSensor) { %>checked<% } %> />
+                <input type="checkbox" id="useMotionSensor[<%= light.id %>]" name="useMotionSensor[<%= light.id %>]" value="<%= light.id  %>" <% if (light.useMotionSensor) { %>checked<% } %> />
               </div>
 
               <div class="form-group mt-1">
                 <label for="useButton[<%= light.id %>]">Ativar botão: </label>
-                <input type="checkbox" id="useButton[<%= light.id %>]" name="useButton[<%= light.id %>]" value="true" <% if (light.useButton) { %>checked<% } %> />
+                <input type="checkbox" id="useButton[<%= light.id %>]" name="useButton[<%= light.id %>]" value="<%= light.id  %>" <% if (light.useButton) { %>checked<% } %> />
               </div>
             </div>
           </div>
