@@ -41,9 +41,13 @@ const ArduinoController = {
     reading.id = arduino.readings.length + 1;
     reading.date = new Date();
 
+    reading.light = mapValue(reading.light);
+    reading.motion = mapValue(reading.motion);
+    reading.button = reading.button == 1 ? 100 : 0;
+
     for (let i = 0; i < reading.dims.length; i++) {
       const dim = reading.dims[i];
-      arduino.lights[i].dim = dim;
+      arduino.lights[i].dim = mapValue(dim);
     }
 
     arduino.readings.push(reading);
@@ -52,3 +56,5 @@ const ArduinoController = {
 };
 
 export default ArduinoController;
+
+const mapValue = (value: number) => Math.round((value / 255) * 100);
