@@ -38,6 +38,17 @@ const dummyArduino: ArduinoModel = {
   readings: [],
 };
 
+// setInterval(() => {
+//   dummyArduino.readings.push({
+//     id: 1,
+//     dims: [Math.random() * 100, Math.random() * 100, Math.random() * 100],
+//     light: Math.random() * 100,
+//     motion: Math.random() * 100,
+//     button: Math.random() * 100 > 50 ? 100 : 0,
+//     date: new Date(),
+//   });
+// }, 2000);
+
 const Arduinos: ArduinoModel[] = [dummyArduino];
 
 export default Arduinos;
